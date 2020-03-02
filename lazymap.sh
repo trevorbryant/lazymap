@@ -14,7 +14,7 @@ if [ $(which nmap) ] && [ -f $(which masscan) ]; then
 	else
 		# Start nmap scan for these ports
 		info "scanning open tcp ports w/ nmap ($ports)"
-		nmap -sC -sV -sV $1 -p "$ports" -oN open-tcp.nmap
+		nmap -sC -sV $1 -p "$ports" -oN open-tcp.nmap
 	fi
 fi
 
