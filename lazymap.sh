@@ -3,7 +3,7 @@
 # credits to calebstewart
 
 if [ $(which nmap) ] && [ -f $(which masscan) ]; then
-	info "enumerating all tcp ports w/ masscan"
+	echo "enumerating all tcp ports w/ masscan"
 	sudo masscan -p 1-65535 $1 -p 0-65535 --max-rate 1000 -oG masscan-tcp.grep -e "$2"
 
 	# grab the list of open ports
@@ -13,7 +13,7 @@ if [ $(which nmap) ] && [ -f $(which masscan) ]; then
 		warning "no open tcp ports detected!"
 	else
 		# Start nmap scan for these ports
-		info "scanning open tcp ports w/ nmap ($ports)"
+		echo "scanning open tcp ports w/ nmap ($ports)"
 		nmap -sC -sV $1 -p "$ports" -oN open-tcp.nmap
 	fi
 fi
