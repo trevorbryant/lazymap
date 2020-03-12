@@ -1,5 +1,5 @@
 # lazymap
-A dumb script to enumerate a single host.
+A dumb script to enumerate a single host using masscan and nmap.
 
 Usage:
 ```bash
